@@ -51,7 +51,7 @@ const Layout = () => {
                     <div className={"page__container __container"}>
                         <div className={"page__body"}>
                             <div className={isMenuActive ? "page__navigation-active" : "page__navigation"}>
-                                <Navigation/>
+                                <Navigation isMenuActive={isMenuActive}/>
                             </div>
                             <div className={"page__main"}>
                                 {
