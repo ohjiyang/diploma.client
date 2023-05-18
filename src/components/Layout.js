@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {RiMenuFill} from "react-icons/ri";
 import Navigation from "./Navigation";
 import Instruction from "./Instruction";
 import Main from "./Main";
+import Auth from "./Auth";
 
 const Layout = () => {
+    //Авторизация
     const [isAuth, setIsAuth] = useState(false)
 
     const handleOnLogin = () => {
@@ -13,8 +15,17 @@ const Layout = () => {
 
     const handleOnLogout = () => {
         setIsAuth(false)
+        localStorage.clear()
     }
 
+    useEffect(() => {
+        const jwt = localStorage.getItem("JWT")
+        if (jwt !== null) {
+            setIsAuth(true)
+        }
+    }, [])
+
+    //Отображение меню навигации
     const [isMenuActive, setIsMenuActive] = useState(false)
 
     const handleOnToggleMenu = () => {
@@ -65,12 +76,7 @@ const Layout = () => {
         );
     } else {
         return (
-            <div className={"wrapper"}>
-                <div>
-                    <button onClick={handleOnLogin}>Login</button>
-                    Auth
-                </div>
-            </div>
+            <Auth onLogin={handleOnLogin}/>
         );
     }
 };
