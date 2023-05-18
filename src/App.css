@@ -60,6 +60,147 @@ body {
 }
 
 /* ---------------------------------------------------------------------------- */
+.auth__body {
+    display: flex;
+    height: 100vh;
+    background: #fafafa;
+}
+
+.auth__left {
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left__login {
+    background: #F2D184;
+}
+
+.left__registration {
+    background: #F1CDD7;
+}
+
+.left__head {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left__logo {
+    width: 500px;
+    font-size: 16px;
+}
+
+.left__logo-login {
+    color: #A68238;
+}
+
+.left__logo-registration {
+    color: #A67E8C;
+}
+
+.left__title {
+    margin-top: 50px;
+    width: 500px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.left__title-login {
+    color: #866118;
+}
+
+.left__title-registration {
+    color: #865C6C;
+}
+
+.auth__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 50%;
+}
+
+/* ---------------------------------------------------------------------------- */
+.right__title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.right__form {
+    margin-top: 40px;
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form__label {
+    margin-bottom: 20px;
+    width: 500px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2A3252;
+}
+
+.form__error {
+    margin: 10px 0;
+    color: #EA4C89;
+}
+
+.form__input {
+    margin-bottom: 30px;
+    font-size: 20px;
+    padding: 20px;
+    background: #F3F3F4;
+    border: 1px solid #F3F3F4;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.form__input:focus {
+    border: 1px solid #F7B7D0;
+    background: #fafafa;
+    outline: 5px solid #FDEDF3;
+}
+
+.form__submit {
+    cursor: pointer;
+    font-size: 18px;
+    width: 250px;
+    border-radius: 10px;
+    color: #fafafa;
+    padding: 10px;
+    background: #EA4C89;
+}
+
+.form__submit:disabled {
+    background: #88445E;
+}
+
+.right__option {
+    margin-top: 10px;
+}
+
+.option__button {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #EA4C89;
+    background: none;
+    border-bottom: 1px solid #fafafa;
+}
+
+.option__button:hover {
+    border-bottom: 1px solid #EA4C89;
+}
+
+/* ---------------------------------------------------------------------------- */
 .header__body {
     padding: 0 5px;
     background: #181818;
