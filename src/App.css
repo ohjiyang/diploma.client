@@ -204,3 +204,39 @@ body {
 .navigation__project:hover {
     background: #242424;
 }
+
+/* ---------------------------------------------------------------------------- */
+.instruction {
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.instruction__logo {
+    font-size: 50px;
+    font-weight: 600;
+    color: #EA4C89;
+}
+
+.instruction__title {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.instruction__subtitle {
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+    background: #181818;
+    border: 1px solid #242424;
+    color: #ffffff;
+}
