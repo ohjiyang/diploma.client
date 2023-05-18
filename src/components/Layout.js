@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {RiMenuFill} from "react-icons/ri";
+import Navigation from "./Navigation";
+import Instruction from "./Instruction";
+import Main from "./Main";
 
 const Layout = () => {
     const [isAuth, setIsAuth] = useState(false)
@@ -16,6 +19,12 @@ const Layout = () => {
 
     const handleOnToggleMenu = () => {
         setIsMenuActive(prevState => !prevState)
+    }
+
+    const [currentProject, setCurrentProject] = useState({})
+
+    const handleOnLoadProject = (project) => {
+        setCurrentProject(project)
     }
 
     if (isAuth) {
@@ -42,10 +51,12 @@ const Layout = () => {
                     <div className={"page__container __container"}>
                         <div className={"page__body"}>
                             <div className={isMenuActive ? "page__navigation-active" : "page__navigation"}>
-                                page__navigation
+                                <Navigation/>
                             </div>
                             <div className={"page__main"}>
-                                page__main
+                                {
+                                    currentProject.title ? (<Main/>) : (<Instruction/>)
+                                }
                             </div>
                         </div>
                     </div>
