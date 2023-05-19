@@ -347,6 +347,36 @@ body {
 }
 
 /* ---------------------------------------------------------------------------- */
+.projectContextMenu {
+    position: absolute;
+    padding: 10px;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    background: #181818;
+}
+
+.projectContextMenu__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.projectContextMenu__button {
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background: #181818;
+    color: #ffffff;
+}
+
+.projectContextMenu__button:hover {
+    background: #242424;
+}
+
+/* ---------------------------------------------------------------------------- */
 .instruction {
     height: calc(100vh - 150px);
     display: flex;
