@@ -5,7 +5,7 @@ import Instruction from "./Instruction";
 import Main from "./Main";
 import Auth from "./Auth";
 
-const Layout = () => {
+const Layout = ({currentProject, onLoadProject}) => {
     //Авторизация
     const [isAuth, setIsAuth] = useState(false)
 
@@ -32,10 +32,8 @@ const Layout = () => {
         setIsMenuActive(prevState => !prevState)
     }
 
-    const [currentProject, setCurrentProject] = useState({})
-
     const handleOnLoadProject = (project) => {
-        setCurrentProject(project)
+        onLoadProject(project)
     }
 
     if (isAuth) {
@@ -62,11 +60,22 @@ const Layout = () => {
                     <div className={"page__container __container"}>
                         <div className={"page__body"}>
                             <div className={isMenuActive ? "page__navigation-active" : "page__navigation"}>
-                                <Navigation isAuth={isAuth} isMenuActive={isMenuActive}/>
+                                <Navigation isAuth={isAuth}
+                                            isMenuActive={isMenuActive}
+                                            currentProject={currentProject}
+                                            onLoadProject={handleOnLoadProject}
+                                />
                             </div>
                             <div className={"page__main"}>
                                 {
-                                    currentProject.title ? (<Main/>) : (<Instruction/>)
+                                    currentProject.title ? (
+                                        <Main
+                                            currentProject={currentProject}
+                                            onLoadProject={handleOnLoadProject}
+                                        />
+                                    ) : (
+                                        <Instruction/>
+                                    )
                                 }
                             </div>
                         </div>

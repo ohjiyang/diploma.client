@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-const ProjectModalEdit = ({isActive, onSetActive, isAuth, onFetchProjects, project}) => {
+const ProjectModalEdit = ({isActive, onSetActive, isAuth, onFetchProjects, project, currentProject, onLoadProject}) => {
     const [title, setTitle] = useState(project.title)
 
     const [titleError, setTitleError] = useState("Название проекта не может быть пустым")
@@ -45,6 +45,9 @@ const ProjectModalEdit = ({isActive, onSetActive, isAuth, onFetchProjects, proje
                 }
             }).then(response => {
                 if (response.data.project) {
+                    if (currentProject._id && response.data.project._id === currentProject._id) {
+                        onLoadProject(response.data.project)
+                    }
                     onSetActive(false)
                     onFetchProjects()
                 }

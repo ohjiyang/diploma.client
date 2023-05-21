@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 
-const ProjectModalDelete = ({isActive, onSetActive, project, onFetchProjects, isAuth}) => {
+const ProjectModalDelete = ({isActive, onSetActive, project, onFetchProjects, isAuth, currentProject, onLoadProject}) => {
 
     const handleOnDeleteProject = (e) => {
         e.preventDefault()
@@ -13,6 +13,9 @@ const ProjectModalDelete = ({isActive, onSetActive, project, onFetchProjects, is
                 }
             }).then(response => {
                 if (response.data.message) {
+                    if (currentProject._id && project._id === currentProject._id) {
+                        onLoadProject({})
+                    }
                     onSetActive(false)
                     onFetchProjects()
                 }

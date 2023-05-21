@@ -7,7 +7,7 @@ import ProjectModalAdd from "../UI/ProjectModalAdd";
 import ProjectModalEdit from "../UI/ProjectModalEdit";
 import ProjectModalDelete from "../UI/ProjectModalDelete";
 
-const Navigation = ({isAuth, isMenuActive}) => {
+const Navigation = ({isAuth, isMenuActive, onLoadProject, currentProject}) => {
     const [projects, setProjects] = useState([])
 
     useEffect(() => {
@@ -29,6 +29,10 @@ const Navigation = ({isAuth, isMenuActive}) => {
                 setProjects(response.data.projects)
             })
         }, 500)
+    }
+
+    const handleOnLoadProject = (project) => {
+        onLoadProject(project)
     }
 
     //Контекстное меню
@@ -104,6 +108,8 @@ const Navigation = ({isAuth, isMenuActive}) => {
                                                            project={project}
                                                            isAuth={isAuth}
                                                            onFetchProjects={handleOnFetchProjects}
+                                                           onLoadProject={handleOnLoadProject}
+                                                           currentProject={currentProject}
                     />
                 }
             </>
@@ -114,7 +120,8 @@ const Navigation = ({isAuth, isMenuActive}) => {
                                                                project={project}
                                                                isAuth={isAuth}
                                                                onFetchProjects={handleOnFetchProjects}
-
+                                                               onLoadProject={handleOnLoadProject}
+                                                               currentProject={currentProject}
                     />
                 }
             </>
@@ -144,6 +151,7 @@ const Navigation = ({isAuth, isMenuActive}) => {
                 {
                     projects.map((project, index) => (
                         <button key={index} className={"navigation__project"}
+                                onClick={() => handleOnLoadProject(project)}
                                 onContextMenu={(e) => handleShowContextMenu(e, project)}
                         >
                             {
