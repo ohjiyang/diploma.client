@@ -169,6 +169,22 @@ body {
     outline: 5px solid #FDEDF3;
 }
 
+.form__textarea {
+    margin-bottom: 30px;
+    font-size: 20px;
+    padding: 20px;
+    background: #F3F3F4;
+    border: 1px solid #F3F3F4;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.form__textarea:focus {
+    border: 1px solid #F7B7D0;
+    background: #fafafa;
+    outline: 5px solid #FDEDF3;
+}
+
 .form__submit {
     cursor: pointer;
     font-size: 18px;
@@ -526,4 +542,83 @@ body {
     background: #181818;
     border: 1px solid #242424;
     color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------- */
+.review {
+    height: calc(100vh - 155px);
+    overflow-y: scroll;
+}
+
+.review__body {
+    padding: 10px;
+}
+
+.review__button {
+    display: flex;
+    background: none;
+    color: #6D6E6F;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.review__button:hover {
+    background: #F3F1F1;
+}
+
+.review__descriptions {
+    margin-top: 10px;
+}
+
+.review__description {
+    margin-bottom: 10px;
+    border: 1px solid #EDEAE9;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.description__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description__title {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.description__buttons {
+    display: flex;
+}
+
+.description__button {
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    background: none;
+    color: #6D6E6F;
+}
+
+.description__button:hover {
+    background: #EDEAE9;
+    color: #000000;
+}
+
+.description__text {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
 }
