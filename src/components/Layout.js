@@ -5,7 +5,7 @@ import Instruction from "./Instruction";
 import Main from "./Main";
 import Auth from "./Auth";
 
-const Layout = ({currentProject, onLoadProject}) => {
+const Layout = ({currentProject, onLoadProject, isMenuActive, onToggleMenu}) => {
     //Авторизация
     const [isAuth, setIsAuth] = useState(false)
 
@@ -26,10 +26,8 @@ const Layout = ({currentProject, onLoadProject}) => {
     }, [])
 
     //Отображение меню навигации
-    const [isMenuActive, setIsMenuActive] = useState(false)
-
     const handleOnToggleMenu = () => {
-        setIsMenuActive(prevState => !prevState)
+        onToggleMenu()
     }
 
     const handleOnLoadProject = (project) => {

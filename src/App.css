@@ -281,12 +281,10 @@ body {
 .page__navigation-active {
     width: 25%;
     border-right: 1px solid #242424;
-    transition: 0.4s;
 }
 
 .page__navigation {
     width: 0;
-    transition: 0.4s;
 }
 
 .page__main-active {
@@ -621,4 +619,246 @@ body {
     width: 100%;
     margin-top: 10px;
     font-size: 18px;
+}
+
+/* ---------------------------------------------------------------------------- */
+.board {
+    display: flex;
+    height: calc(100vh - 155px);
+}
+
+.board__body-left1 {
+    padding: 10px;
+    width: 570px;
+    overflow-x: scroll;
+}
+
+.board__body-left2 {
+    padding: 10px;
+    width: 1140px;
+    overflow-x: scroll;
+}
+
+.board__body-left3 {
+    padding: 10px;
+    width: 870px;
+    overflow-x: scroll;
+}
+
+.board__body-left4 {
+    padding: 10px;
+    width: 1440px;
+    overflow-x: scroll;
+}
+
+.board__button {
+    display: flex;
+    background: none;
+    color: #6D6E6F;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.board__button:hover {
+    background: #F3F1F1;
+}
+
+.board__body-right {
+    visibility: hidden;
+    width: 0;
+}
+
+.board__body-right__active {
+    display: flex;
+    border-left: 1px solid #EDEAE9;
+    background: #ffffff;
+    width: 570px;
+}
+
+.board__boards {
+    display: flex;
+    height: calc(100vh - 232px);
+}
+
+.board__board {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.board__board-head {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board__board-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+.board__board-buttons {
+    display: flex;
+}
+.board__board-button {
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    background: none;
+    color: #6D6E6F;
+}
+
+.board__board-button:hover {
+    background: #EDEAE9;
+    color: #000000;
+}
+
+.board__tasks {
+    display: flex;
+    flex-direction: column;
+}
+
+.board__task {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #EDEAE9;
+    background: #ffffff;
+}
+
+.board__task:hover {
+    border: 1px solid #AFABAC;
+}
+
+.task__button {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #EDEAE9;
+    background: #ffffff;
+}
+
+.task__button:hover {
+    border: 1px solid #AFABAC;
+}
+
+.task__info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info__head {
+    padding: 10px;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EDEAE9;
+}
+
+.info__title {
+    font-size: 22px;
+}
+
+.info__buttons {
+    display: flex;
+}
+
+.info__body {
+    display: flex;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    width: 100%;
+    background: #FAFAFA;
+    padding: 10px;
+}
+
+.info__comments {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info__comment {
+    margin-bottom: 10px;
+    border: 1px solid #EDEAE9;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.comment__title {
+    font-weight: 700;
+}
+
+.comment__text {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.info__foot {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-top: 1px solid #EDEAE9;
+}
+
+.info__input {
+    font-size: 20px;
+    padding: 20px;
+    background: #F3F3F4;
+    border: 1px solid #F3F3F4;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+}
+
+.info__input:focus {
+    border: 1px solid #F7B7D0;
+    background: #fafafa;
+    outline: 5px solid #FDEDF3;
+}
+
+.info__button {
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    background: none;
+    color: #6D6E6F;
+}
+
+.info__button:hover {
+    background: #EDEAE9;
+    color: #000000;
 }

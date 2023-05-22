@@ -12,12 +12,25 @@ function App() {
     const handleOnLoadProject = (project) => {
         setCurrentProject(project)
     }
+
+    const [isMenuActive, setIsMenuActive] = useState(false)
+
+    const handleOnToggleMenu = () => {
+        setIsMenuActive(prevState => !prevState)
+    }
+
     return (
         <div className="App">
             <Routes>
-                <Route path={"/"} element={<Layout currentProject={currentProject} onLoadProject={handleOnLoadProject}/>}>
+                <Route path={"/"} element={<Layout isMenuActive={isMenuActive}
+                                                   onToggleMenu={handleOnToggleMenu}
+                                                   currentProject={currentProject}
+                                                   onLoadProject={handleOnLoadProject}
+                />}>
                     <Route index element={<Review currentProject={currentProject}/>}></Route>
-                    <Route path={"/board"} element={<Board/>}></Route>
+                    <Route path={"/board"} element={<Board isMenuActive={isMenuActive}
+                                                           currentProject={currentProject}
+                    />}></Route>
                     <Route path={"/monitoring"} element={<Monitoring/>}></Route>
                 </Route>
             </Routes>
