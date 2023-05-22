@@ -31,7 +31,7 @@ function App() {
                     <Route path={"/board"} element={<Board isMenuActive={isMenuActive}
                                                            currentProject={currentProject}
                     />}></Route>
-                    <Route path={"/monitoring"} element={<Monitoring/>}></Route>
+                    <Route path={"/monitoring"} element={<Monitoring currentProject={currentProject}/>}></Route>
                 </Route>
             </Routes>
         </div>

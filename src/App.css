@@ -704,9 +704,11 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
+
 .board__board-buttons {
     display: flex;
 }
+
 .board__board-button {
     cursor: pointer;
     margin-left: 10px;
@@ -860,5 +862,60 @@ body {
 
 .info__button:hover {
     background: #EDEAE9;
+    color: #000000;
+}
+
+/* ---------------------------------------------------------------------------- */
+.monitoring {
+    padding: 10px;
+    height: calc(100vh - 155px);
+    overflow-y: scroll;
+}
+
+.monitoring__statuses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.monitoring__status {
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid #EDEAE9;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 30px;
+    background: #ffffff;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.status__counter {
+    margin-top: 10px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.monitoring__diagrams {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+}
+
+.monitoring__diagram {
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid #EDEAE9;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 30px;
+    background: #ffffff;
+    justify-content: center;
+    align-items: center;
     color: #000000;
 }
